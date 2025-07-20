@@ -3,9 +3,10 @@ import pandas as pd
 import mysql.connector
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app)
 # Función para conectarse y construir el modelo de recomendaciones
 def construir_modelo():
     conn = mysql.connector.connect(
